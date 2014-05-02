@@ -130,7 +130,7 @@ require('wiredep')({
   exclude: [ /jquery/, 'bower_components/modernizr/modernizr.js' ],
 
   ignorePath: /string or regexp to ignore from the injected filepath/,
-  
+
   overrides: {
     // see `Bower Overrides` section below.
     //
@@ -145,7 +145,8 @@ require('wiredep')({
         typeOfBowerFile: /match the way this type of file is included/
       },
       replace: {
-        typeOfBowerFile: '<format for this {{filePath}} to be injected>'
+        typeOfBowerFile: '<format for this {{filePath}} to be injected>',
+        typeOfBowerFileToInline: '<!-- you can also inline the entire file if you like -->>\n{{fileContents}}'
       }
     },
 

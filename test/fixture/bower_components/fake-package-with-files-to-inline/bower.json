@@ -1,0 +1,12 @@
+{
+  "name": "fake-package-with-files-to-inline",
+  "version": "0.0.0",
+  "main": [
+    "fake-package-with-files-to-inline.css",
+    "fake-package-with-files-to-inline.js",
+    "fake-package-with-files-to-inline-with-windows-line-endings.js"
+  ],
+  "dependencies": {
+    "fake-package-without-main": "1.0.0"
+  }
+}

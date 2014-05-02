@@ -1,0 +1,7 @@
+{
+  "name": "wiredep-test",
+  "version": "0.0.0",
+  "dependencies": {
+    "fake-package-with-files-to-inline": "1.0.0"
+  }
+}

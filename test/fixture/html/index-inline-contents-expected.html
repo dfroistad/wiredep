@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>test.</title>
+  <script src="../bower_components/modernizr/modernizr.js"></script>
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" />
+  <!-- bower:css -->
+  <style type="text/css" data-src="../bower_components/fake-package-with-files-to-inline/fake-package-with-files-to-inline.css">
+  body {
+    /* this should be injected! */
+  }
+  </style>
+  <!-- endbower -->
+</head>
+<body>
+  <!-- bower:js -->
+  <script type="text/javascript" data-src="../bower_components/fake-package-without-main/fake-package-without-main.js">
+  (function () {
+    // this should still be injected!
+  })();
+  </script>
+  <script type="text/javascript" data-src="../bower_components/fake-package-with-files-to-inline/fake-package-with-files-to-inline.js">
+  (function () {
+    // this should be injected!
+  })();
+  </script>
+  <script type="text/javascript" data-src="../bower_components/fake-package-with-files-to-inline/fake-package-with-files-to-inline-with-windows-line-endings.js">
+  (function () {
+    // this should be injected with updated line endings!
+  })();
+  </script>
+  <!-- endbower -->
+</body>
+</html>

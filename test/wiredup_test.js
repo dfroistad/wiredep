@@ -34,6 +34,30 @@ function testReplace(fileType) {
   };
 }
 
+function testReplaceWithInlineContents(fileType) {
+  return function(test) {
+    var filePaths = getFilePaths('index-inline-contents', fileType);
+
+    wiredep({
+      directory: '.tmp/bower_components',
+      bowerJson: require('../.tmp/bower_for_inline_contents.json'),
+      src: [filePaths.actual],
+      ignorePath: '.tmp/',
+      fileTypes: {
+          html: {
+            replace: {
+              js: '<script type="text/javascript" data-src="{{filePath}}">\n{{fileContents}}\n</script>',
+              css: '<style type="text/css" data-src="{{filePath}}">\n{{fileContents}}\n</style>'
+            }
+          }
+        }
+    });
+
+    test.equal(filePaths.read('expected'), filePaths.read('actual'));
+    test.done();
+  };
+}
+
 function testReplaceWithExcludedsrc(fileType) {
   return function (test) {
     var filePaths = getFilePaths('index-excluded-files', fileType);
@@ -136,6 +160,8 @@ exports.wiredep = {
   replaceSass: testReplace('sass'),
   replaceScss: testReplace('scss'),
   replaceYml: testReplace('yml'),
+
+  replaceHtmlWithInlineContents: testReplaceWithInlineContents('html'),
 
   replaceUnrecognizedFileType: testReplace('unrecognized'),
 
