@@ -1,4 +1,4 @@
 {
-  "name": "fake-package-without-main",
+  "name": "fake-package-with-override",
   "version": "1.0.0"
 }
